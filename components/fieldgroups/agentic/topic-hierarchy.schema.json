@@ -1,0 +1,58 @@
+{
+  "meta:license": [
+    "Copyright 2026 Adobe Systems Incorporated. All rights reserved.",
+    "This work is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license",
+    "you may not use this file except in compliance with the License. You may obtain a copy",
+    "of the License at https://creativecommons.org/licenses/by/4.0/"
+  ],
+  "$id": "https://ns.adobe.com/xdm/fieldgroups/agentic/topichierarchy",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Topic Hierarchy",
+  "type": "object",
+  "meta:extensible": true,
+  "meta:tags": {
+    "industry": ["all"]
+  },
+  "meta:intendedToExtend": ["https://ns.adobe.com/xdm/classes/agentic/topic"],
+  "description": "Denormalized topic taxonomy levels for a topic, from the top-level (L1) root parent down to the deepest (L5) level. Intended for a topic lookup dataset so conversation data can resolve a topic's full hierarchy path. Populate only as many levels as the topic has; unused levels are omitted.",
+  "definitions": {
+    "topicHierarchy": {
+      "properties": {
+        "xdm:L1": {
+          "title": "Topic Level 1 (Root)",
+          "type": "string",
+          "description": "The highest-level (root) parent topic in the hierarchy."
+        },
+        "xdm:L2": {
+          "title": "Topic Level 2",
+          "type": "string",
+          "description": "The second-level topic, a child of L1."
+        },
+        "xdm:L3": {
+          "title": "Topic Level 3",
+          "type": "string",
+          "description": "The third-level topic, a child of L2."
+        },
+        "xdm:L4": {
+          "title": "Topic Level 4",
+          "type": "string",
+          "description": "The fourth-level topic, a child of L3."
+        },
+        "xdm:L5": {
+          "title": "Topic Level 5 (Deepest)",
+          "type": "string",
+          "description": "The deepest-level topic, a child of L4."
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "https://ns.adobe.com/xdm/common/extensible#/definitions/@context"
+    },
+    {
+      "$ref": "#/definitions/topicHierarchy"
+    }
+  ],
+  "meta:status": "experimental"
+}

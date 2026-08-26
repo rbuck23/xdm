@@ -1,0 +1,40 @@
+{
+  "meta:license": [
+    "Copyright 2026 Adobe Systems Incorporated. All rights reserved.",
+    "This work is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license",
+    "you may not use this file except in compliance with the License. You may obtain a copy",
+    "of the License at https://creativecommons.org/licenses/by/4.0/"
+  ],
+  "$id": "https://ns.adobe.com/xdm/classes/agentic/topic",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Conversation Topic",
+  "type": "object",
+  "meta:extensible": true,
+  "meta:abstract": true,
+  "meta:tags": {
+    "industry": ["all"]
+  },
+  "meta:extends": ["https://ns.adobe.com/xdm/data/record"],
+  "meta:status": "experimental",
+  "description": "A conversation topic entity, intended to back a lookup (reference) dataset. Each record represents a single topic in a topic taxonomy, keyed by the leaf topic, so that conversation data referencing the same topic can be joined to it to resolve the topic's hierarchy.",
+  "definitions": {
+    "topic": {
+      "properties": {
+        "xdm:topic": {
+          "title": "Topic",
+          "type": "string",
+          "description": "The specific topic. Serves as the primary identifier for the topic lookup and is the key that conversation data joins against."
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "https://ns.adobe.com/xdm/data/record"
+    },
+    {
+      "$ref": "#/definitions/topic"
+    }
+  ],
+  "required": ["xdm:topic"]
+}
