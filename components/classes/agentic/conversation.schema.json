@@ -51,9 +51,19 @@
                           "description": "The second-level topic, a child of level1."
                         },
                         "xdm:level3": {
-                          "title": "Topic Level 3 (Deepest)",
+                          "title": "Topic Level 3",
                           "type": "string",
-                          "description": "The third-level (deepest) topic, a child of level2."
+                          "description": "The third-level topic, a child of level2."
+                        },
+                        "xdm:level4": {
+                          "title": "Topic Level 4",
+                          "type": "string",
+                          "description": "The fourth-level topic, a child of level3."
+                        },
+                        "xdm:level5": {
+                          "title": "Topic Level 5 (Deepest)",
+                          "type": "string",
+                          "description": "The fifth-level (deepest) topic, a child of level4."
                         }
                       }
                     }
