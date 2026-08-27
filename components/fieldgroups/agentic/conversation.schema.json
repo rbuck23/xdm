@@ -13,7 +13,9 @@
   "meta:tags": {
     "industry": ["all"]
   },
-  "meta:intendedToExtend": ["https://ns.adobe.com/xdm/context/experienceevent"],
+  "meta:intendedToExtend": [
+    "https://ns.adobe.com/xdm/classes/agentic/conversation"
+  ],
   "description": "Conversation-level derived data, including a topic hierarchy classification carried under signals.",
   "definitions": {
     "conversation": {
