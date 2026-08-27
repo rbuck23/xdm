@@ -16,14 +16,14 @@
   },
   "meta:extends": ["https://ns.adobe.com/xdm/data/record"],
   "meta:status": "experimental",
-  "description": "A conversation record capturing derived conversation signals, including a topic hierarchy classification. Record-based (time-invariant) so it can be composed into a schema and used as a lookup/reference dataset.",
+  "description": "A conversation record capturing derived conversation signals, including a topic taxonomy classification. Record-based (time-invariant) so it can be composed into a schema and used as a lookup/reference dataset.",
   "definitions": {
     "conversation": {
       "properties": {
-        "xdm:conversation": {
-          "title": "Conversation",
+        "xdm:conversationTopicTaxonomy": {
+          "title": "Conversation Topic Taxonomy",
           "type": "object",
-          "description": "Container for conversation-level derived data.",
+          "description": "Container for conversation topic taxonomy.",
           "properties": {
             "xdm:signals": {
               "title": "Signals",
@@ -35,15 +35,15 @@
                   "type": "object",
                   "description": "Topic classification derived for the conversation.",
                   "properties": {
-                    "xdm:hierarchy": {
-                      "title": "Topic Hierarchy",
+                    "xdm:taxonomy": {
+                      "title": "Topic Taxonomy",
                       "type": "object",
                       "description": "Denormalized topic taxonomy levels, from the top-level (level1) root down to the deepest level.",
                       "properties": {
                         "xdm:level1": {
                           "title": "Topic Level 1 (Root)",
                           "type": "string",
-                          "description": "The highest-level (root) parent topic in the hierarchy."
+                          "description": "The highest-level (root) parent topic in the taxonomy."
                         },
                         "xdm:level2": {
                           "title": "Topic Level 2",
