@@ -7,7 +7,7 @@
   ],
   "$id": "https://ns.adobe.com/xdm/classes/agentic/conversation",
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "title": "Conversation",
+  "title": "Conversation Record",
   "type": "object",
   "meta:extensible": true,
   "meta:abstract": true,
@@ -16,14 +16,62 @@
   },
   "meta:extends": ["https://ns.adobe.com/xdm/data/record"],
   "meta:status": "experimental",
-  "description": "A conversation record, intended as the base for a conversation lookup (reference) dataset. Keyed by conversation identifier; descriptive fields such as the topic hierarchy are supplied by field groups (for example fieldgroups/agentic/conversation).",
+  "description": "A conversation record capturing derived conversation signals, including a topic hierarchy classification. Record-based (time-invariant) so it can be composed into a schema and used as a lookup/reference dataset.",
   "definitions": {
     "conversation": {
       "properties": {
-        "xdm:conversationID": {
-          "title": "Conversation ID",
-          "type": "string",
-          "description": "Unique identifier for the conversation. Serves as the primary identifier for the lookup and the key that conversation data joins against."
+        "xdm:conversation": {
+          "title": "Conversation",
+          "type": "object",
+          "description": "Container for conversation-level derived data.",
+          "properties": {
+            "xdm:signals": {
+              "title": "Signals",
+              "type": "object",
+              "description": "Derived signals for the conversation.",
+              "properties": {
+                "xdm:topic": {
+                  "title": "Topic",
+                  "type": "object",
+                  "description": "Topic classification derived for the conversation.",
+                  "properties": {
+                    "xdm:hierarchy": {
+                      "title": "Topic Hierarchy",
+                      "type": "object",
+                      "description": "Denormalized topic taxonomy levels, from the top-level (level1) root down to the deepest level.",
+                      "properties": {
+                        "xdm:level1": {
+                          "title": "Topic Level 1 (Root)",
+                          "type": "string",
+                          "description": "The highest-level (root) parent topic in the hierarchy."
+                        },
+                        "xdm:level2": {
+                          "title": "Topic Level 2",
+                          "type": "string",
+                          "description": "The second-level topic, a child of level1."
+                        },
+                        "xdm:level3": {
+                          "title": "Topic Level 3",
+                          "type": "string",
+                          "description": "The third-level topic, a child of level2."
+                        },
+                        "xdm:level4": {
+                          "title": "Topic Level 4",
+                          "type": "string",
+                          "description": "The fourth-level topic, a child of level3."
+                        },
+                        "xdm:level5": {
+                          "title": "Topic Level 5 (Deepest)",
+                          "type": "string",
+                          "description": "The fifth-level (deepest) topic, a child of level4."
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -35,6 +83,5 @@
     {
       "$ref": "#/definitions/conversation"
     }
-  ],
-  "required": ["xdm:conversationID"]
+  ]
 }
