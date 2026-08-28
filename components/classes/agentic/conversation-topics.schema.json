@@ -5,9 +5,9 @@
     "you may not use this file except in compliance with the License. You may obtain a copy",
     "of the License at https://creativecommons.org/licenses/by/4.0/"
   ],
-  "$id": "https://ns.adobe.com/xdm/classes/agentic/conversation",
+  "$id": "https://ns.adobe.com/xdm/classes/agentic/conversation-topics",
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "title": "Conversation Record",
+  "title": "Conversation Topics",
   "type": "object",
   "meta:extensible": true,
   "meta:abstract": true,
@@ -18,7 +18,7 @@
   "meta:status": "experimental",
   "description": "A conversation record capturing derived conversation signals, including a topic taxonomy classification. Record-based (time-invariant) so it can be composed into a schema and used as a lookup/reference dataset.",
   "definitions": {
-    "conversation": {
+    "conversation-topics": {
       "properties": {
         "xdm:conversationTopicTaxonomy": {
           "title": "Conversation Topic Taxonomy",
@@ -81,7 +81,7 @@
       "$ref": "https://ns.adobe.com/xdm/data/record"
     },
     {
-      "$ref": "#/definitions/conversation"
+      "$ref": "#/definitions/conversation-topics"
     }
   ]
 }
