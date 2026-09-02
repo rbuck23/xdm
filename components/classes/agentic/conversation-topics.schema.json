@@ -15,7 +15,7 @@
     "industry": ["all"]
   },
   "meta:extends": ["https://ns.adobe.com/xdm/data/record"],
-  "meta:status": "experimental",
+  "meta:status": "stable",
   "description": "A conversation record capturing derived conversation signals, including a topic taxonomy classification. Record-based (time-invariant) so it can be composed into a schema and used as a lookup/reference dataset.",
   "definitions": {
     "conversation-topics": {
