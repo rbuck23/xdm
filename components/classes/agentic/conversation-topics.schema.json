@@ -41,7 +41,7 @@
                       "description": "Denormalized topic taxonomy levels, from the top-level (level1) root down to the deepest level.",
                       "properties": {
                         "xdm:level1": {
-                          "title": "Topic Level 1 (Root)",
+                          "title": "Topic Level 1",
                           "type": "string",
                           "description": "The highest-level (root) parent topic in the taxonomy."
                         },
@@ -61,7 +61,7 @@
                           "description": "The fourth-level topic, a child of level3."
                         },
                         "xdm:level5": {
-                          "title": "Topic Level 5 (Deepest)",
+                          "title": "Topic Level 5",
                           "type": "string",
                           "description": "The fifth-level (deepest) topic, a child of level4."
                         }
